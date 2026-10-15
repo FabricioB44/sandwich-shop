@@ -3,11 +3,23 @@ import java.util.Scanner;
 
 public class SandwichShop {
     public static void main(String[] args) {
+        boolean validInput = false;
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Choose sandwich size:");
-        System.out.println("1: Regular $5.45");
-        System.out.println("2: Large $8.95");
-        int sandwichSize = myScanner.nextInt();
+        int sandwichSize = 0;
+
+        while (!validInput) {
+            System.out.println("1: Regular $5.45");
+            System.out.println("2: Large $8.95");
+            sandwichSize = myScanner.nextInt();
+            if (sandwichSize == 1 || sandwichSize == 2) {
+                validInput = true;
+            } else {
+                System.out.println("Invalid option, please choose again.");
+            }
+        }
+
+
         System.out.println("Input your age:");
         int userAge = myScanner.nextInt();
 
